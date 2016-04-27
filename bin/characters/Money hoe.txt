@@ -1,0 +1,162 @@
+[ACCOUNT]
+character-username = Money hoe
+character-password = tyran320
+
+[CHARACTER]
+character-height = 0
+character-posx = 2859
+character-posy = 3336
+character-rights = 0
+crystal-bow-shots = 0
+skull-timer = 0
+magic-book = 0
+brother-info = 0	0
+brother-info = 1	0
+brother-info = 2	0
+brother-info = 3	0
+brother-info = 4	0
+brother-info = 5	0
+special-amount = 10.0
+selected-coffin = 0
+barrows-killcount = 0
+teleblock-length = 0
+pc-points = 0
+slayerTask = 0
+taskAmount = 0
+magePoints = 0
+repPoints = 0
+slayPoints = 0
+rankLevel = 0
+autoRet = 0
+barrowskillcount = 0
+flagged = false
+wave = 0
+gwkc = 0
+fightMode = 0
+void = 0	0	0	0	0
+
+[EQUIPMENT]
+character-equip = 0	-1	0	
+character-equip = 1	-1	1	
+character-equip = 2	-1	1	
+character-equip = 3	-1	0	
+character-equip = 4	-1	0	
+character-equip = 5	-1	1	
+character-equip = 6	-1	0	
+character-equip = 7	-1	0	
+character-equip = 8	-1	0	
+character-equip = 9	-1	1	
+character-equip = 10	-1	1	
+character-equip = 11	-1	0	
+character-equip = 12	-1	1	
+character-equip = 13	-1	0	
+
+[LOOK]
+character-look = 0	1
+character-look = 1	50
+character-look = 2	56
+character-look = 3	61
+character-look = 4	68
+character-look = 5	77
+character-look = 6	79
+character-look = 7	-1
+character-look = 8	5
+character-look = 9	14
+character-look = 10	6
+character-look = 11	2
+character-look = 12	0
+
+[SKILLS]
+character-skill = 0	1	0
+character-skill = 1	1	0
+character-skill = 2	1	0
+character-skill = 3	10	1300
+character-skill = 4	1	0
+character-skill = 5	0	0
+character-skill = 6	1	0
+character-skill = 7	1	0
+character-skill = 8	1	0
+character-skill = 9	1	0
+character-skill = 10	1	0
+character-skill = 11	1	0
+character-skill = 12	1	0
+character-skill = 13	1	0
+character-skill = 14	1	0
+character-skill = 15	1	0
+character-skill = 16	1	0
+character-skill = 17	1	0
+character-skill = 18	1	0
+character-skill = 19	1	0
+character-skill = 20	1	0
+character-skill = 21	1	0
+character-skill = 22	1	0
+character-skill = 23	1	0
+character-skill = 24	1	0
+
+[ITEMS]
+
+[BANK]
+character-bank = 0	1695	4
+character-bank = 1	1697	4
+character-bank = 2	1699	4
+character-bank = 3	1701	4
+character-bank = 4	1703	1
+character-bank = 5	10367	2
+character-bank = 6	1439	2
+character-bank = 7	1447	2
+character-bank = 8	1445	2
+character-bank = 9	1441	2
+character-bank = 10	1443	2
+character-bank = 11	1449	5
+character-bank = 12	1453	5
+character-bank = 13	1457	1
+character-bank = 14	1451	4
+character-bank = 15	1459	1
+character-bank = 16	1455	2
+character-bank = 17	1126	17
+character-bank = 18	1078	4
+character-bank = 19	1090	6
+character-bank = 20	1196	12
+character-bank = 21	1298	24
+character-bank = 22	1328	11
+character-bank = 23	1314	11
+character-bank = 24	2588	1
+character-bank = 25	2584	2
+character-bank = 26	3473	5
+character-bank = 27	2596	3
+character-bank = 28	2592	1
+character-bank = 29	2594	4
+character-bank = 30	2598	3
+character-bank = 31	7333	1
+character-bank = 32	7339	1
+character-bank = 33	7345	2
+character-bank = 34	7351	3
+character-bank = 35	7357	3
+character-bank = 36	7395	2
+character-bank = 37	7387	3
+character-bank = 38	7393	2
+character-bank = 39	7389	1
+character-bank = 40	7365	2
+character-bank = 41	7369	1
+character-bank = 42	7363	1
+character-bank = 43	10319	2
+character-bank = 44	10325	4
+character-bank = 45	10321	1
+character-bank = 46	10323	4
+character-bank = 47	7491	1
+character-bank = 48	10409	1
+character-bank = 49	10411	2
+character-bank = 50	10413	2
+character-bank = 51	10415	1
+character-bank = 52	10405	2
+character-bank = 53	10407	1
+character-bank = 54	2632	1
+character-bank = 55	2636	2
+character-bank = 56	2638	1
+character-bank = 57	2634	2
+
+[FRIENDS]
+character-friend = 0	722722683
+
+[EOF]
+

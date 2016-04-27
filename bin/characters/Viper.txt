@@ -1,0 +1,130 @@
+[ACCOUNT]
+character-username = Viper
+character-password = gettobird9
+
+[CHARACTER]
+character-height = 0
+character-posx = 2613
+character-posy = 3091
+character-rights = 0
+crystal-bow-shots = 0
+skull-timer = 0
+magic-book = 0
+brother-info = 0	0
+brother-info = 1	0
+brother-info = 2	0
+brother-info = 3	0
+brother-info = 4	0
+brother-info = 5	0
+special-amount = 10.0
+selected-coffin = 0
+barrows-killcount = 0
+teleblock-length = 0
+pc-points = 0
+slayerTask = 0
+taskAmount = 0
+magePoints = 0
+repPoints = 0
+slayPoints = 0
+rankLevel = 0
+autoRet = 0
+barrowskillcount = 0
+flagged = false
+wave = 0
+gwkc = 0
+fightMode = 0
+void = 0	0	0	0	0
+
+[EQUIPMENT]
+character-equip = 0	-1	1	
+character-equip = 1	-1	1	
+character-equip = 2	-1	1	
+character-equip = 3	1265	1	
+character-equip = 4	-1	1	
+character-equip = 5	-1	1	
+character-equip = 6	-1	0	
+character-equip = 7	-1	1	
+character-equip = 8	-1	0	
+character-equip = 9	-1	1	
+character-equip = 10	-1	1	
+character-equip = 11	-1	0	
+character-equip = 12	-1	1	
+character-equip = 13	-1	0	
+
+[LOOK]
+character-look = 0	0
+character-look = 1	7
+character-look = 2	25
+character-look = 3	29
+character-look = 4	35
+character-look = 5	39
+character-look = 6	44
+character-look = 7	14
+character-look = 8	7
+character-look = 9	8
+character-look = 10	9
+character-look = 11	5
+character-look = 12	0
+
+[SKILLS]
+character-skill = 0	1	0
+character-skill = 1	1	0
+character-skill = 2	1	0
+character-skill = 3	10	1300
+character-skill = 4	1	0
+character-skill = 5	1	0
+character-skill = 6	1	0
+character-skill = 7	1	0
+character-skill = 8	1	0
+character-skill = 9	1	0
+character-skill = 10	32	18000
+character-skill = 11	1	0
+character-skill = 12	1	0
+character-skill = 13	80	2148500
+character-skill = 14	81	2244800
+character-skill = 15	1	0
+character-skill = 16	1	0
+character-skill = 17	1	0
+character-skill = 18	1	0
+character-skill = 19	1	0
+character-skill = 20	1	0
+character-skill = 21	1	0
+character-skill = 22	1	0
+character-skill = 23	1	0
+character-skill = 24	1	0
+
+[ITEMS]
+character-item = 0	2348	1
+
+[BANK]
+character-bank = 0	996	2994
+character-bank = 1	559	180
+character-bank = 2	9705	2
+character-bank = 3	9706	2
+character-bank = 4	9707	50
+character-bank = 5	1266	1
+character-bank = 6	557	180
+character-bank = 7	9704	2
+character-bank = 8	1352	2
+character-bank = 9	318	18
+character-bank = 10	454	28
+character-bank = 11	2350	1
+character-bank = 12	304	2
+character-bank = 13	1598	1
+character-bank = 14	865	135
+character-bank = 15	448	3
+character-bank = 16	864	130
+character-bank = 17	1622	1
+character-bank = 18	1198	8
+character-bank = 19	1182	1
+character-bank = 20	867	130
+character-bank = 21	1122	5
+character-bank = 22	1431	54
+character-bank = 23	1624	1
+character-bank = 24	1332	39
+character-bank = 25	1162	1
+
+[FRIENDS]
+
+[EOF]
+

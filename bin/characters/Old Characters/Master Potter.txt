@@ -1,0 +1,3 @@
+[ACCOUNT]
+character-username = Master Potter
+character-password = potme6210

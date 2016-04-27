@@ -1,0 +1,138 @@
+[ACCOUNT]
+character-username = Chandler59
+character-password = macias123
+
+[CHARACTER]
+character-height = 0
+character-posx = 2861
+character-posy = 3337
+character-rights = 0
+crystal-bow-shots = 0
+skull-timer = 0
+magic-book = 0
+brother-info = 0	0
+brother-info = 1	0
+brother-info = 2	0
+brother-info = 3	0
+brother-info = 4	0
+brother-info = 5	0
+special-amount = 10.0
+selected-coffin = 0
+barrows-killcount = 0
+teleblock-length = 0
+pc-points = 0
+slayerTask = 0
+taskAmount = 0
+magePoints = 0
+repPoints = 0
+slayPoints = 0
+rankLevel = 0
+autoRet = 0
+barrowskillcount = 0
+flagged = false
+wave = 0
+gwkc = 0
+fightMode = 0
+void = 0	0	0	0	0
+
+[EQUIPMENT]
+character-equip = 0	-1	1	
+character-equip = 1	-1	1	
+character-equip = 2	-1	1	
+character-equip = 3	-1	0	
+character-equip = 4	-1	1	
+character-equip = 5	-1	1	
+character-equip = 6	-1	0	
+character-equip = 7	-1	1	
+character-equip = 8	-1	0	
+character-equip = 9	-1	1	
+character-equip = 10	-1	1	
+character-equip = 11	-1	0	
+character-equip = 12	-1	1	
+character-equip = 13	-1	0	
+
+[LOOK]
+character-look = 0	0
+character-look = 1	1
+character-look = 2	21
+character-look = 3	27
+character-look = 4	34
+character-look = 5	39
+character-look = 6	43
+character-look = 7	14
+character-look = 8	1
+character-look = 9	1
+character-look = 10	2
+character-look = 11	3
+character-look = 12	0
+
+[SKILLS]
+character-skill = 0	1	80
+character-skill = 1	1	0
+character-skill = 2	1	0
+character-skill = 3	12	1799
+character-skill = 4	1	0
+character-skill = 5	1	0
+character-skill = 6	10	1175
+character-skill = 7	1	0
+character-skill = 8	54	163332
+character-skill = 9	1	0
+character-skill = 10	1	0
+character-skill = 11	30	14160
+character-skill = 12	1	0
+character-skill = 13	1	0
+character-skill = 14	1	0
+character-skill = 15	1	0
+character-skill = 16	1	0
+character-skill = 17	1	0
+character-skill = 18	1	0
+character-skill = 19	1	0
+character-skill = 20	1	0
+character-skill = 21	1	0
+character-skill = 22	1	0
+character-skill = 23	1	0
+character-skill = 24	1	0
+
+[ITEMS]
+character-item = 8	1522	1
+character-item = 9	1522	1
+character-item = 10	1522	1
+character-item = 11	1522	1
+character-item = 12	1522	1
+character-item = 13	1522	1
+character-item = 14	1522	1
+character-item = 15	1522	1
+character-item = 16	1522	1
+character-item = 17	1522	1
+character-item = 18	1522	1
+character-item = 19	1522	1
+character-item = 20	1522	1
+character-item = 21	1522	1
+character-item = 22	1522	1
+character-item = 23	1522	1
+character-item = 24	1522	1
+character-item = 25	1522	1
+character-item = 26	1522	1
+character-item = 27	591	1
+
+[BANK]
+character-bank = 0	9706	1
+character-bank = 1	9707	25
+character-bank = 2	557	3
+character-bank = 3	1266	1
+character-bank = 4	304	1
+character-bank = 5	947	1
+character-bank = 6	9704	1
+character-bank = 7	9705	1
+character-bank = 8	559	3
+character-bank = 9	1522	13
+character-bank = 10	1520	206
+character-bank = 11	1518	233
+character-bank = 12	1358	1
+
+[FRIENDS]
+character-friend = 0	2083792066547704
+character-friend = 1	41138570661
+
+[EOF]
+

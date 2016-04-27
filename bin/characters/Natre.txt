@@ -1,0 +1,134 @@
+[ACCOUNT]
+character-username = Natre
+character-password = lollol
+
+[CHARACTER]
+character-height = 0
+character-posx = 2875
+character-posy = 3332
+character-rights = 0
+crystal-bow-shots = 0
+skull-timer = 0
+magic-book = 0
+brother-info = 0	0
+brother-info = 1	0
+brother-info = 2	0
+brother-info = 3	0
+brother-info = 4	0
+brother-info = 5	0
+special-amount = 10.0
+selected-coffin = 0
+barrows-killcount = 0
+teleblock-length = 0
+pc-points = 0
+slayerTask = 116
+taskAmount = 25
+magePoints = 0
+repPoints = 0
+slayPoints = 0
+rankLevel = 0
+autoRet = 1
+barrowskillcount = 0
+flagged = false
+wave = 0
+gwkc = 0
+fightMode = 0
+void = 0	0	0	0	0
+
+[EQUIPMENT]
+character-equip = 0	-1	1	
+character-equip = 1	-1	1	
+character-equip = 2	-1	1	
+character-equip = 3	9703	1	
+character-equip = 4	-1	1	
+character-equip = 5	9704	1	
+character-equip = 6	-1	0	
+character-equip = 7	-1	1	
+character-equip = 8	-1	0	
+character-equip = 9	-1	1	
+character-equip = 10	-1	1	
+character-equip = 11	-1	0	
+character-equip = 12	-1	1	
+character-equip = 13	9706	25	
+
+[LOOK]
+character-look = 0	0
+character-look = 1	2
+character-look = 2	21
+character-look = 3	26
+character-look = 4	33
+character-look = 5	38
+character-look = 6	42
+character-look = 7	14
+character-look = 8	5
+character-look = 9	1
+character-look = 10	2
+character-look = 11	3
+character-look = 12	0
+
+[SKILLS]
+character-skill = 0	36	26400
+character-skill = 1	1	0
+character-skill = 2	40	37600
+character-skill = 3	34	22395
+character-skill = 4	1	0
+character-skill = 5	13	2000
+character-skill = 6	1	0
+character-skill = 7	18	3600
+character-skill = 8	1	0
+character-skill = 9	1	0
+character-skill = 10	96	9903000
+character-skill = 11	1	0
+character-skill = 12	1	0
+character-skill = 13	1	0
+character-skill = 14	1	0
+character-skill = 15	1	0
+character-skill = 16	1	0
+character-skill = 17	1	0
+character-skill = 18	1	0
+character-skill = 19	1	0
+character-skill = 20	1	0
+character-skill = 21	1	0
+character-skill = 22	1	0
+character-skill = 23	1	0
+character-skill = 24	1	0
+
+[ITEMS]
+character-item = 0	312	1
+character-item = 1	7945	1
+character-item = 2	7945	1
+character-item = 3	7945	1
+character-item = 4	7945	1
+character-item = 5	7945	1
+character-item = 6	7945	1
+character-item = 7	7945	1
+character-item = 8	7945	1
+character-item = 9	7945	1
+character-item = 10	7945	1
+character-item = 11	7945	1
+character-item = 12	7945	1
+character-item = 13	7945	1
+character-item = 14	7945	1
+character-item = 15	7945	1
+
+[BANK]
+character-bank = 0	1266	1
+character-bank = 1	1352	1
+character-bank = 2	9706	1
+character-bank = 3	559	30
+character-bank = 4	557	30
+character-bank = 5	364	27
+character-bank = 6	372	24
+character-bank = 7	306	1
+character-bank = 8	996	1475
+character-bank = 9	7945	837
+character-bank = 10	316	6
+character-bank = 11	324	15
+character-bank = 12	304	1
+
+[FRIENDS]
+character-friend = 0	1355301985
+character-friend = 1	722722683
+
+[EOF]
+
