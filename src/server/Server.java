@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
 import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
 import org.jboss.netty.util.HashedWheelTimer;
-import server.util.ControlPanel;
+//import server.util.ControlPanel;
 
 import server.world.PlayerManager;
 
@@ -85,7 +85,7 @@ public class Server {
 	public static FightCaves fightCaves = new FightCaves();
 	public static TickManager tickManager = new TickManager();
 	public static ClanChatHandler clanChat = new ClanChatHandler();
-	public static ControlPanel panel = new ControlPanel(true); // false if you want it off
+	//public static ControlPanel panel = new ControlPanel(true); // false if you want it off
 	
 	public static CycleEventHandler cycleeventmanager = new CycleEventHandler();
 	public static CycleEventHandler getCycleEventManager() {

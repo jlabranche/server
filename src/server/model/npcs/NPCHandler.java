@@ -34,8 +34,8 @@ public class NPCHandler {
                         NPCDefinitions.getDefinitions()[i] = null;
 		}
 		
-		loadNPCList("./Data/CFG/npc.cfg");
-		loadAutoSpawn("./Data/CFG/spawn-config.cfg");
+		loadNPCList("./Data/cfg/npc.cfg");
+		loadAutoSpawn("./Data/cfg/spawn-config.cfg");
 		// System.out.println("NPC Spawns Loaded");
 	}
 	
