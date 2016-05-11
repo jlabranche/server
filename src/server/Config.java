@@ -9,11 +9,6 @@ public class Config {
 	public static String SERVER_NAME = "Sky Scape Live";
 	public static final String WELCOME_MESSAGE = "Welcome to "+SERVER_NAME;
 	public static final String FORUMS = "http://www.skyscapelive.net/forum.php";
-	public static boolean LOCK_EXPERIENCE = false;
-	public static boolean MINI_GAMES = true;
-	public static String LOGOUT_MESSAGE = "Click here to logout!";
-	public static String DEATH_MESSAGE = "Oh dear you are dead!";
-	public static boolean DOUBLE_EXP = false;
 	public static int MAX_NPCS = Server.npcHandler.maxNPCs;
 
 	public static final int CLIENT_VERSION = 1;

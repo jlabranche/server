@@ -161,7 +161,6 @@ public class Client extends Player {
 	public void destruct() {
 		if(session == null) 
 			return;
-		Server.panel.removeEntity(playerName);
 		CycleEventHandler.getSingleton().stopEvents(this);
 		PlayerSave.saveGame(this);//dat is voor normale logout ja,maar voor unexpected logout meotn we bij destruct zijn denk ik
 		if (clanId >= 0)
@@ -213,7 +212,6 @@ public class Client extends Player {
 			outStream.createFrame(249);
 			outStream.writeByteA(1); // 1 for members, zero for free
 			outStream.writeWordBigEndianA(playerId);
-			Server.panel.addEntity(playerName);
 			for (int j = 0; j < PlayerHandler.players.length; j++) {
 				if (j == playerId)
 					continue;
