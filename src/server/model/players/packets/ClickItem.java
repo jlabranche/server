@@ -1,8 +1,10 @@
 package server.model.players.packets;
 
 import server.model.players.Client;
+import server.model.players.EatFood;
 import server.model.players.PacketType;
 import server.model.players.skills.HerbCleaning;
+import server.util.ScriptManager;
 
 /**
  * Clicking an item, bury bone, eat food etc
@@ -14,10 +16,10 @@ public class ClickItem implements PacketType {
 		c.getInStream().readSignedWordBigEndianA();
 		int itemSlot = c.getInStream().readUnsignedWordA();
 		int itemId = c.getInStream().readUnsignedWordBigEndian();
-		c.getPotions().usePotion(itemId, itemSlot);
 		if (itemId != c.playerItems[itemSlot] - 1) {
 			return;
 		}
+		c.getPotions().usePotion(itemId, itemSlot);
 		//if (itemID == 5337)
 		if (itemId >= 5509 && itemId <= 5514) {
 			int pouch = -1;
@@ -36,14 +38,11 @@ public class ClickItem implements PacketType {
 		if (itemId == 4155) {
 			c.getDH().sendDialogues(53,c.npcType);
 		}
-		HerbCleaning.handleHerbCleaning(c, itemId, itemSlot);
-		/*if (c.getHerblore().isUnidHerb(itemId))
-			c.getHerblore().handleHerbClick(itemId);*/
+		 ScriptManager.callFunc("itemClick_"+itemId, c, itemId, itemSlot);
 		if (c.getFood().isFood(itemId))
-			c.getFood().eat(itemId, itemSlot);
-		// ScriptManager.callFunc("itemClick_"+itemId, c, itemId, itemSlot);
-		//if (c.getPotions().isPotion(itemId))
-			//c.getPotions().handlePotion(itemId, itemSlot);
+				c.getFood().eat(itemId, itemSlot);
+		if (c.getHerblore().isUnidHerb(itemId))
+			HerbCleaning.handleHerbCleaning(c, itemId, itemSlot);
 		if (c.getPrayer().isBone(itemId))
 			c.getPrayer().buryBone(itemId, itemSlot);
 		if (itemId == 952) {

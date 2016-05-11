@@ -574,7 +574,7 @@ public class Commands implements PacketType {
 			if (c.playerName.equalsIgnoreCase("Steven")) {
 				rank = "@dre@[Owner] @bla@"+ c.playerName +": ";
 			}
-			if ((c.playerName.equalsIgnoreCase("Tyler")) || (c.playerName.equalsIgnoreCase("Penguin"))) {
+			if ((c.playerName.equalsIgnoreCase("Cracked")) || (c.playerName.equalsIgnoreCase("Penguin"))) {
 				rank = "@blu@[Dev] @bla@"+ c.playerName +": ";
 			}
 			if (c.rankLevel >= 1 && c.rankLevel < 50 && c.playerRights == 0) {

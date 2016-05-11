@@ -112,7 +112,7 @@ public class ShopHandler {
 		boolean EndOfFile = false;
 		BufferedReader characterfile = null;
 		try {
-			characterfile = new BufferedReader(new FileReader("./Data/cfg/"
+			characterfile = new BufferedReader(new FileReader("./Data/CFG/"
 					+ FileName));
 		} catch (FileNotFoundException fileex) {
 			Misc.println(FileName + ": file not found.");

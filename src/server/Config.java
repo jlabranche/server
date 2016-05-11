@@ -6,14 +6,14 @@ public class Config {
 	public static final boolean ALLOWPINS = true;	// are you allowing pins
 	public static final boolean SERVER_DEBUG = false;//needs to be false for Real world to work
 	public static final int[] DESTROYABLES 	= 	{10548, 10551, 18349, 18351, 18353, 18355, 18357, 18359}; // Destroyable
-	public static String SERVER_NAME = "Pre-SSL";
+	public static String SERVER_NAME = "Sky Scape Live";
 	public static final String WELCOME_MESSAGE = "Welcome to "+SERVER_NAME;
 	public static final String FORUMS = "http://www.skyscapelive.net/forum.php";
 	public static boolean LOCK_EXPERIENCE = false;
 	public static boolean MINI_GAMES = true;
 	public static String LOGOUT_MESSAGE = "Click here to logout!";
 	public static String DEATH_MESSAGE = "Oh dear you are dead!";
-	public static boolean DOUBLE_EXP = true;
+	public static boolean DOUBLE_EXP = false;
 	public static int MAX_NPCS = Server.npcHandler.maxNPCs;
 
 	public static final int CLIENT_VERSION = 1;
@@ -69,10 +69,10 @@ public class Config {
 
 	public static final boolean itemRequirements = true; // attack, def, str, range or magic levels required to wield weapons or wear items?
 
-	public static final int MELEE_EXP_RATE = 10000; // damage * exp rate
-	public static final int P1MELEE_EXP_RATE = 8000; // damage * exp rate
-	public static final int RANGE_EXP_RATE = 8000;
-	public static final int MAGIC_EXP_RATE = 8000;
+	public static final int MELEE_EXP_RATE = 40; // damage * exp rate
+	public static final int P1MELEE_EXP_RATE = 40; // damage * exp rate
+	public static final int RANGE_EXP_RATE = 40;
+	public static final int MAGIC_EXP_RATE = 40;
 	public static final int PRAYER_EXP_RATE = 5;
 	public static final double SERVER_EXP_BONUS = 1;
 
@@ -172,20 +172,20 @@ public class Config {
 	/**
 	 * Skill Experience Multipliers
 	 */	
-	public static final int WOODCUTTING_EXPERIENCE = 2000; //all skills but slayer were 4 slayer was 100
-	public static final int MINING_EXPERIENCE = 2000;
-	public static final int SMITHING_EXPERIENCE = 2000;
-	public static final int FARMING_EXPERIENCE = 2000;
-	public static final int FIREMAKING_EXPERIENCE = 5000;
-	public static final int HERBLORE_EXPERIENCE = 2000;
-	public static final int FISHING_EXPERIENCE = 2000;
-	public static final int AGILITY_EXPERIENCE = 2000;
-	public static final int PRAYER_EXPERIENCE = 20000;
-	public static final int P1PRAYER_EXPERIENCE = 175000;
-	public static final int RUNECRAFTING_EXPERIENCE = 2000;
-	public static final int CRAFTING_EXPERIENCE = 2000;
-	public static final int THIEVING_EXPERIENCE = 2000;
-	public static final int SLAYER_EXPERIENCE = 10000;
-	public static final int COOKING_EXPERIENCE = 10000;
-	public static final int FLETCHING_EXPERIENCE = 2000;
+	public static final int WOODCUTTING_EXPERIENCE = 40; //all skills but slayer were 4 slayer was 100
+	public static final int MINING_EXPERIENCE = 40;
+	public static final int SMITHING_EXPERIENCE = 40;
+	public static final int FARMING_EXPERIENCE = 40;
+	public static final int FIREMAKING_EXPERIENCE = 40;
+	public static final int HERBLORE_EXPERIENCE = 40;
+	public static final int FISHING_EXPERIENCE = 40;
+	public static final int AGILITY_EXPERIENCE = 40;
+	public static final int PRAYER_EXPERIENCE = 40;
+	public static final int P1PRAYER_EXPERIENCE = 40;
+	public static final int RUNECRAFTING_EXPERIENCE = 40;
+	public static final int CRAFTING_EXPERIENCE = 40;
+	public static final int THIEVING_EXPERIENCE = 40;
+	public static final int SLAYER_EXPERIENCE = 40;
+	public static final int COOKING_EXPERIENCE = 40;
+	public static final int FLETCHING_EXPERIENCE = 40;
 }

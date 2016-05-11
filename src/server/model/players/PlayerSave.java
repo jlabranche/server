@@ -111,6 +111,8 @@ public class PlayerSave {
 						p.rankLevel = Integer.parseInt(token2);
 					} else if (token.equals("presLevel")) {
 						p.presLevel = Integer.parseInt(token2);
+					} else if (token.equals("getStart")) {
+						p.getStart = Integer.parseInt(token2);
 					} else if (token.equals("autoRet")) {
 						p.autoRet = Integer.parseInt(token2);
 					} else if (token.equals("barrowskillcount")) {
@@ -345,6 +347,9 @@ public class PlayerSave {
 			characterfile.write("presLevel = ", 0, 12);
 			characterfile.write(Integer.toString(p.presLevel), 0, Integer
 					.toString(p.presLevel).length());
+			characterfile.newLine();
+			characterfile.write("getStart = ", 0, 10);
+			characterfile.write(Integer.toString(p.getStart), 0, Integer.toString(p.getStart).length());
 			characterfile.newLine();
 			characterfile.write("autoRet = ", 0, 10);
 			characterfile.write(Integer.toString(p.autoRet), 0, Integer

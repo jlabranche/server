@@ -20,15 +20,23 @@ public class Slayer {
 		this.c = c;
 	}
 
+	public int[] Lvl1Tasks = {41,81,101,102};
+	public int[] Lvl1Reqs = {1,1,1};
 	public int[] lowTasks = {76,112,116,181};
 	public int[] lowReqs = {1,1,1};
 	public int[] medTasks = {82,83};
 	public int[] medReqs = {40,50};
 	public int[] highTasks = { 1590 };
 	public int[] highReqs = { 70 };
+	public int[] testTasks = { 99 };
+	public int[] testReqs = { 99 };
 	
-	public void easyTask(){
+	public void Lvl1Task(){
 		giveTask(1);
+	}
+	
+	public void Lvl99Task(){
+		giveTask(4);
 	}
 	
 	public void medTask(){
@@ -56,13 +64,16 @@ public class Slayer {
 		int random = 1;
 		if (taskLevel == 1) {
 			random = (int) (Math.random() * (lowTasks.length - 1));
-			given = lowTasks[random];
+			given = Lvl1Tasks[random];
 		} else if (taskLevel == 2) {
 			random = (int) (Math.random() * (medTasks.length - 1));
 			given = medTasks[random];
 		} else if (taskLevel == 3) {
 			random = (int) (Math.random() * (highTasks.length - 1));
 			given = highTasks[random];
+		} else if (taskLevel == 4) {
+			random = (int) (Math.random() * (testTasks.length - 1));
+			given = testTasks[random];
 		}
 		if (!canDoTask(taskLevel, random)) {
 			giveTask(taskLevel);
@@ -76,6 +87,16 @@ public class Slayer {
 	public void slayloc(int slaynpc){
 		slaynpc = c.slayerTask;
 		switch (slaynpc) {
+			case 41:
+				c.getPA().sendStatement("@dre@Chicken:@bla@ Located at Home. ");
+				break;
+			case 81:
+				c.getPA().sendStatement("@dre@Cow:@bla@ Located at Home. ");
+				break;
+			case 101:
+			case 102:
+				c.getPA().sendStatement("@dre@Goblins:@bla@ Located in Relleka. ");
+				break;
 			case 76:
 				c.getPA().sendStatement("@dre@Zombies:@bla@ Located west of Canifis ");
 				break;
@@ -104,6 +125,15 @@ public class Slayer {
 		slayxp = c.slayerTask;
 		switch (slayxp) {
 			//simple task npcs
+		case 41:
+		case 81:
+		case 101:
+		case 102:
+			if (c.playerSlayer >= 0 || c.playerSlayer < 15) {
+			c.getPA().addSkillXP(10 * Config.SLAYER_EXPERIENCE, c.playerSlayer);
+			c.slayPoints += 1 + Misc.random(2);
+			}
+			break;
 		case 76:
 			c.getPA().addSkillXP(8 * Config.SLAYER_EXPERIENCE, c.playerSlayer);
 			c.slayPoints += 1 + Misc.random(2);

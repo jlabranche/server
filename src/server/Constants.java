@@ -8,7 +8,7 @@ public class Constants
 
 	// Assign integer value for NPC IDs to keep it clean and readable for later
 	// edits.
-	private static final int COW = 2805, GOBLIN = 101, GARG = 1610,  ROCK = 1622;
+	private static final int COW = 81, GOBLIN = 101, GARG = 1610,  ROCK = 1622, AWIZARD = 2712, EWIZARD = 2711, WWIZARD = 2710, FWIZARD = 2709;
 	
 
 	// Assign integer value for Item IDs to keep it clean and readable for later
@@ -89,7 +89,7 @@ public class Constants
 			{101,BONES,1,ALWAYS}, {101,1237,1,EASY}, {101,1103,1,EASY}, {101,1277,1,COMMON}, {101,1139,1,COMMON}, {101,288,1,UNCOMMON},
 //--------------------------------------------------------------
 	//Goblin Lvl 13
-					{102,BONES,1,ALWAYS}, {102,1239,1,EASY}, {102,1101,1,EASY}, {102,1279,1,EASY}, {102,1137,1,COMMON}, {102,288,1,UNCOMMON},
+					{102,BONES,1,ALWAYS}, {102,1239,1,EASY}, {102,1101,1,EASY}, {102,1279,1,EASY}, {102,1137,1,COMMON}, {102,1067,1,COMMON}, {102,4119,1,COMMON}, {102,288,1,UNCOMMON},
 //--------------------------------------------------------------
 	//Market Guard Level 20- Relleka
 					{2571,BONES,1,ALWAYS}, {2571,COINS,5 + Misc.random(20),ALWAYS}, {2571,1173,1,EASY}, {2571,1067,1,COMMON}, {2571,1323,1,EASY}, {2571,1325,1,UNCOMMON},
@@ -97,6 +97,21 @@ public class Constants
 	//Cyclops Lvl 56
 			{116,BBONES,1,ALWAYS}, {116,1195,1,COMMON}, {116,1621,1,COMMON}, {116,484,1,50}, {116,510,1,COMMON}, 
 			{116,379,1,COMMON}, {116,KEY1,1,RARE},
+//-------------------------------------------------------------
+	//Heros
+			{21,BONES,1,ALWAYS}, {21,43,1 + Misc.random(10),ALWAYS}, {21,RPLATE,1,UNCOMMON}, {21,RLEGS,1,COMMON}, {21,RFULL,1,COMMON}, {21,RKITE,1,EASY}, {21,RSWORD,1,EASY},	
+//--------------------------------------------------------------
+	//Wizards
+		//Air
+			{AWIZARD,ASH,1,ALWAYS},{AWIZARD,COINS,2 + Misc.random(34),EASY}, {AWIZARD,AIRRUNES,2 + Misc.random(30),ALWAYS}, {AWIZARD,KEY1,1,RARE}, {AWIZARD,1381,1,COMMON},
+		//Earth
+			{EWIZARD,ASH,1,ALWAYS},{EWIZARD,COINS,2 + Misc.random(34),EASY}, {EWIZARD,EARTHRUNES,2 + Misc.random(30),ALWAYS}, {EWIZARD,KEY1,1,RARE}, {EWIZARD,1385,1,COMMON},
+		//Water
+			{WWIZARD,ASH,1,ALWAYS},{WWIZARD,COINS,2 + Misc.random(34),EASY}, {WWIZARD,WATERRUNES,2 + Misc.random(30),ALWAYS}, {WWIZARD,KEY1,1,RARE}, {WWIZARD,1383,1,COMMON},
+		//Fire
+			{FWIZARD,ASH,1,ALWAYS},{FWIZARD,COINS,2 + Misc.random(34),EASY}, {FWIZARD,FIRERUNES,2 + Misc.random(30),ALWAYS}, {FWIZARD,KEY1,1,RARE}, {FWIZARD,1387,1,COMMON},
+		//Wizard
+			{13,BONES,1,ALWAYS},{13,MINDRUNES,2 + Misc.random(30),ALWAYS},
 //--------------------------------------------------------------
 	//Moss Giants Lvl 42
 			{112,BBONES,1,ALWAYS},{112,1179,1,COMMON},{112,1141,1,COMMON},
@@ -126,24 +141,7 @@ public class Constants
 			{195,1327,1,COMMON}, {195,1179,1,COMMON},{2616,6571,1,COMMON},
 //--------------------------------------------------------------
 	//Chicken
-			{2692,BONES,1,ALWAYS}, {2692,314,1 + Misc.random(15),ALWAYS}, {2692,2138,1,ALWAYS},
-//--------------------------------------------------------------
-	//Warrior Woman
-					{15,BONES,1,ALWAYS}, {15,995,1 + Misc.random(195),ALWAYS}, {15,SPLATE,1,COMMON}, {15,SLEGS,1,COMMON}, {15,SFULL,1,COMMON}, {15,SSQ,1,EASY}, {15,SSWORD,1,EASY},
-	//Black Knight
-					{178,BONES,1,ALWAYS}, {178,869,1 + Misc.random(4),ALWAYS}, {178,BLKPLATE,1,COMMON}, {178,BLKLEGS,1,COMMON}, {178,BLKFULL,1,COMMON}, {178,BLKSQ,1,EASY}, {178,BLKSWORD,1,EASY},
-	//Renegade Knight
-					{237,BONES,1,ALWAYS}, {237,808,1 + Misc.random(7),ALWAYS}, {237,MPLATE,1,COMMON}, {237,MLEGS,1,COMMON}, {237,MFULL,1,COMMON}, {237,MSQ,1,EASY}, {237,MSWORD,1,EASY},
-	//Paladin
-					{20,BONES,1,ALWAYS}, {20,803,1 + Misc.random(10),ALWAYS}, {20,APLATE,1,COMMON}, {20,ALEGS,1,COMMON}, {20,AFULL,1,COMMON}, {20,AKITE,1,EASY}, {20,ASWORD,1,EASY},
-	//Heros
-					{21,BONES,1,ALWAYS}, {21,43,1 + Misc.random(10),ALWAYS}, {21,RPLATE,1,UNCOMMON}, {21,RLEGS,1,COMMON}, {21,RFULL,1,COMMON}, {21,RKITE,1,EASY}, {21,RSWORD,1,EASY},				
-					
-//--------------------------------------------------------------
-	//Gnomes
-					{66,BONES,1,ALWAYS}, {66,882,1 + Misc.random(6),ALWAYS}, {66,841,1,COMMON},
-					{67,BONES,1,ALWAYS}, {67,882,1 + Misc.random(15),ALWAYS}, {67,843,1,COMMON},
-					{68,BONES,1,ALWAYS}, {68,884,1 + Misc.random(6),ALWAYS}, {68,849,1,COMMON},
+			{41,BONES,1,ALWAYS}, {41,314,1 + Misc.random(15),ALWAYS}, {41,2138,1,ALWAYS},
 //--------------------------------------------------------------
 	//Lesser Demons
 			{82,ASH,1,ALWAYS}, {82,COINS,25 + Misc.random(175), COMMON}, {82,1147,1,UNCOMMON},
@@ -155,6 +153,17 @@ public class Constants
 	//Dad
 			{1125,6729,1,ALWAYS}, {1125,COINS,100 + Misc.random(200), COMMON}, {1125,1331,1,UNCOMMON},
 			{1125,RPLATE,1,VRARE}, {1125,1543,1,VRARE}, {1125,1093,1,VRARE},
+			
+//--------------------------------------------------------------
+	//Mourner
+			{2373,228,1,UNCOMMON}, {2373,561,50,UNCOMMON}, {2373,212,25,UNCOMMON}, {2373,208,25,UNCOMMON},
+			{2373,228,200,RARE}, {2373,4675,1,RARE},
+			{2373,1506,1,VRARE},
+			
+//--------------------------------------------------------------			
+// Shadow Warrior
+			{158,ASH,1,ALWAYS}, {158,204,10,UNCOMMON}, {158,1303,1,RARE},
+			
 //--------------------------------------------------------------
 	//Animated Armors
 			{4278,1075,1,ALWAYS}, {4278,1117,1,ALWAYS}, {4278,1155,1,ALWAYS},
@@ -194,31 +203,15 @@ public class Constants
 			{181,9142,2 + Misc.random(10),COMMON},{181,1291,1,UNCOMMON},{181,830,5,RARE},
 			{181,231,1,RARE},{181,228,5,COMMON},{181,1452,1,RARE},
 		/****Herbs****/
-			{181,GUAM,1,UNCOMMON},{181,MARR,1,COMMON},
+			{181,GUAM,1,COMMON},{181,MARR,1,COMMON},
 			{181,TARR,1,COMMON},{181,HARR,1,COMMON},
 			{181,RAN,1,UNCOMMON}, {181,IRIT,1,UNCOMMON},
 			{181,AVAN,1,UNCOMMON},{181,KWUARM,1,UNCOMMON},
 			{181,CADAN,1,UNCOMMON},{181,LANT,1,UNCOMMON},
 			{181,DWARF,1,UNCOMMON},{181,TORST,1,RARE},
-		/****Seeds*****/
-			{181,5291,1 + Misc.random(2),EASY}, {181,5292,1 + Misc.random(3),EASY},
-			{181,5293,1 + Misc.random(3),UNCOMMON}, 
 		/****Runes and ammunition****/
 			{181,AIRRUNES,9+Misc.random(27),COMMON},{181,EARTHRUNES,9,COMMON},{181,BODYRUNES,9,COMMON},
 			{181,MINDRUNES,12,COMMON},{1590,892,42,RARE},{181,LAWRUNES,2,COMMON},{181,NATURERUNES,3,UNCOMMON},
-//--------------------------------------------------------------
-	//Wizards
-		//Air
-			{2712,ASH,1,ALWAYS},{2712,COINS,2 + Misc.random(34),EASY}, {2712,AIRRUNES,2 + Misc.random(30),ALWAYS}, {2712,KEY1,1,RARE}, {2712,1381,1,COMMON},
-		//Earth
-			{2711,ASH,1,ALWAYS},{2711,COINS,2 + Misc.random(34),EASY}, {2711,EARTHRUNES,2 + Misc.random(30),ALWAYS}, {2711,KEY1,1,RARE}, {2711,1385,1,COMMON},
-		//Water
-			{2710,ASH,1,ALWAYS},{2710,COINS,2 + Misc.random(34),EASY}, {2710,WATERRUNES,2 + Misc.random(30),ALWAYS}, {2710,KEY1,1,RARE}, {2710,1383,1,COMMON},
-		//Fire
-			{2709,ASH,1,ALWAYS},{2709,COINS,2 + Misc.random(34),EASY}, {2709,FIRERUNES,2 + Misc.random(30),ALWAYS}, {2709,KEY1,1,RARE}, {2709,1387,1,COMMON},
-		//Wizard
-			{13,BONES,1,ALWAYS},{13,MINDRUNES,2 + Misc.random(30),ALWAYS},
-			
 //--------------------------------------------------------------
 	//Gargoyles
 		/****Weapons/Armour****/

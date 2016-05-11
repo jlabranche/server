@@ -122,7 +122,8 @@ public class ObjectManager {
 			client.getPA().checkObjectSpawn(1307, 2839, 3373, 2, 10);//Maple Tree
 			client.getPA().checkObjectSpawn(1309, 2828, 3370, 2, 10);//Yew Tree
 			client.getPA().checkObjectSpawn(1309, 2826, 3380, 2, 10);//Yew Tree
-			client.getPA().checkObjectSpawn(1734, 3008, 9550, 1, 10);
+			client.getPA().checkObjectSpawn(13627, 3172, 3287, 2, 10);//SSL NETWORK
+			//client.getPA().checkObjectSpawn(1734, 3008, 9550, 1, 10);
 			removeObject(2861, 3335);
 			removeObject(2862, 3335);
 			removeObject(2860, 3335);

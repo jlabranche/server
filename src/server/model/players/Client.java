@@ -1,6 +1,8 @@
 package server.model.players;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.Future;
 
@@ -25,6 +27,7 @@ import server.event.EventManager;
 import server.event.Event;
 import server.event.EventContainer;
 import server.util.SQL;
+import server.model.players.quests.*;
 
 public class Client extends Player {
 
@@ -77,6 +80,15 @@ public class Client extends Player {
 	private Thieving thieving = new Thieving(this);
 	private Firemaking firemaking = new Firemaking();
 	private Herblore herblore = new Herblore(this);
+	
+	//quests
+	private GettingStart GettingStart = new GettingStart(this);
+	
+	
+	public GettingStart getGSQ() {
+		return GettingStart;
+	}
+	
 	
 	public boolean kamfreenaDone;
 	public boolean inCyclops;
@@ -149,7 +161,7 @@ public class Client extends Player {
 	public void destruct() {
 		if(session == null) 
 			return;
-		//Server.panel.removeEntity(playerName);
+		Server.panel.removeEntity(playerName);
 		CycleEventHandler.getSingleton().stopEvents(this);
 		PlayerSave.saveGame(this);//dat is voor normale logout ja,maar voor unexpected logout meotn we bij destruct zijn denk ik
 		if (clanId >= 0)
@@ -201,7 +213,7 @@ public class Client extends Player {
 			outStream.createFrame(249);
 			outStream.writeByteA(1); // 1 for members, zero for free
 			outStream.writeWordBigEndianA(playerId);
-			//Server.panel.addEntity(playerName);
+			Server.panel.addEntity(playerName);
 			for (int j = 0; j < PlayerHandler.players.length; j++) {
 				if (j == playerId)
 					continue;
@@ -221,6 +233,7 @@ public class Client extends Player {
 			}
 			getPA().handleWeaponStyle();
 			getPA().handleLoginText();
+			getPA().loadQuests();
 			accountFlagged = getPA().checkForFlags();
 			// getPA().sendFrame36(43, fightMode-1);
 			getPA().sendFrame36(108, 0);// resets autocast button
@@ -251,8 +264,8 @@ public class Client extends Player {
 			setSidebarInterface(12, 147); // run tab
 			setSidebarInterface(13, -1);
 			setSidebarInterface(0, 2423);
-			sendMessage("@red@Welcome to " + Config.SERVER_NAME);
-			sendMessage("@blu@Click a skill tab to learn more information on how to train it.");
+			sendMessage("Welcome to " + Config.SERVER_NAME);
+			//sendMessage("@blu@Click a skill tab to learn more information on how to train it.");
 			//sendMessage("Items you collect during Pre-SSL, will not roll over into SSL,");
 			//sendMessage("But will give you tookens for a Re-Release shop with certain 'rare' items");
 			//sendMessage("More information will follow at Skyscapelive.com");
@@ -290,120 +303,6 @@ public class Client extends Player {
 			saveTimer = Config.SAVE_TIMER;
 			saveCharacter = true;
 			Misc.println("[REGISTERED]: " + playerName + "");
-			/** Quest Tab **/
-			getPA().sendFrame126("", 640);
-			getPA().sendFrame126("Quest Tab To-BE Used?", 663);
-			getPA().sendFrame126("", 13136);
-			getPA().sendFrame126("", 673);
-			getPA().sendFrame126("", 7332);
-			getPA().sendFrame126("", 7333);
-		        getPA().sendFrame126("", 7334);
-			getPA().sendFrame126("", 7336);
-			getPA().sendFrame126("", 7383);
-			getPA().sendFrame126("", 7339);
-			getPA().sendFrame126("", 7338);
-			getPA().sendFrame126("", 7340);
-			getPA().sendFrame126("", 7346);
-			getPA().sendFrame126("", 7341);
-			getPA().sendFrame126("", 7342);
-			getPA().sendFrame126("", 7337);
-			getPA().sendFrame126("", 7343);
-			getPA().sendFrame126("", 7335);
-			getPA().sendFrame126("", 7344);
-			getPA().sendFrame126("", 7345);
-			getPA().sendFrame126("", 7347);
-			getPA().sendFrame126("", 7348);
-			
-			/*Members Quests*/
-			getPA().sendFrame126("", 12772);
-			getPA().sendFrame126("", 7352);
-			getPA().sendFrame126("", 12129);
-			getPA().sendFrame126("", 8438);
-			getPA().sendFrame126("", 18517);
-			getPA().sendFrame126("", 15847);
-			getPA().sendFrame126("", 15487);
-			getPA().sendFrame126("", 12852);
-			getPA().sendFrame126("", 7354);
-			getPA().sendFrame126("", 7355);
-			getPA().sendFrame126("", 7356);
-			getPA().sendFrame126("", 8679);
-			getPA().sendFrame126("", 7459);
-			getPA().sendFrame126("", 7357);
-			getPA().sendFrame126("", 14912);
-			getPA().sendFrame126("", 249);
-			getPA().sendFrame126("", 6024);
-			getPA().sendFrame126("", 191);
-			getPA().sendFrame126("", 15235);
-			getPA().sendFrame126("", 15592);
-			getPA().sendFrame126("", 6987);
-			getPA().sendFrame126("", 15098);
-			getPA().sendFrame126("", 15352);
-			getPA().sendFrame126("", 18306);
-			getPA().sendFrame126("", 15499);
-			getPA().sendFrame126("", 668);
-			getPA().sendFrame126("", 18684);
-			getPA().sendFrame126("", 6027);
-			getPA().sendFrame126("", 18157);
-			getPA().sendFrame126("", 15847);
-			getPA().sendFrame126("", 16128);
-			getPA().sendFrame126("", 12836);
-			getPA().sendFrame126("", 16149);
-			getPA().sendFrame126("", 15841);
-			getPA().sendFrame126("", 7353);
-			getPA().sendFrame126("", 7358);
-			getPA().sendFrame126("", 17510);
-			getPA().sendFrame126("", 7359);
-			getPA().sendFrame126("", 14169);
-			getPA().sendFrame126("", 10115);
-			getPA().sendFrame126("", 14604);
-			getPA().sendFrame126("", 7360);
-			getPA().sendFrame126("", 12282);
-			getPA().sendFrame126("", 13577);
-			getPA().sendFrame126("", 12839);
-			getPA().sendFrame126("", 7361);
-			getPA().sendFrame126("", 11857);
-			getPA().sendFrame126("", 7362);
-			getPA().sendFrame126("", 7363);
-			getPA().sendFrame126("", 7364);
-			getPA().sendFrame126("", 10135);
-			getPA().sendFrame126("", 4508);
-			getPA().sendFrame126("", 11907);
-			getPA().sendFrame126("", 7365);
-			getPA().sendFrame126("", 7366);
-			getPA().sendFrame126("", 7367);
-			getPA().sendFrame126("", 13389);
-			getPA().sendFrame126("", 7368);
-			getPA().sendFrame126("", 11132);
-			getPA().sendFrame126("", 7369);
-			getPA().sendFrame126("", 12389);
-			getPA().sendFrame126("", 13974);
-			getPA().sendFrame126("", 7370);
-			getPA().sendFrame126("", 8137);
-			getPA().sendFrame126("", 7371);
-			getPA().sendFrame126("", 12345);
-			getPA().sendFrame126("", 7372);
-			getPA().sendFrame126("", 8115);
-			getPA().sendFrame126("", 8576);
-			getPA().sendFrame126("", 12139);
-			getPA().sendFrame126("", 7373);
-			getPA().sendFrame126("", 7374);
-			getPA().sendFrame126("", 8969);
-			getPA().sendFrame126("", 7375);
-			getPA().sendFrame126("", 7376);
-			getPA().sendFrame126("", 1740);
-			getPA().sendFrame126("", 3278);
-			getPA().sendFrame126("", 7378);
-			getPA().sendFrame126("", 6518);
-			getPA().sendFrame126("", 7379);
-			getPA().sendFrame126("", 7380);
-			getPA().sendFrame126("", 7381);
-			getPA().sendFrame126("", 11858);
-			getPA().sendFrame126("", 9927);
-			getPA().sendFrame126("", 7349);
-			getPA().sendFrame126("", 7350);
-			getPA().sendFrame126("", 7351);
-			getPA().sendFrame126("", 13356);
-			/*END OF ALL QUESTS*/
 			getPA().sendFrame126("Bank of " +playerName+ ".", 5383);//Bank
 			/*Logout*/
 			getPA().sendFrame126("         Thank You For Playing", 2450);
@@ -895,6 +794,12 @@ public class Client extends Player {
 			return true;
 		}
 	}
+	
+	public Map<Integer, String> getStringMap() {
+		return stringMap;
+	}
+	
+	public Map<Integer, String> stringMap = new HashMap<Integer, String>();
 
 	public void correctCoordinates() {
 		if (inPcGame()) {

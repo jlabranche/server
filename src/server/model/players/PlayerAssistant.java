@@ -100,6 +100,12 @@ public class PlayerAssistant {
 			}
 		}
 	}
+	public void sendNewString(String s, int id) {
+		if (c != null) {
+			c.getStringMap().put(id, s);
+		}
+	}
+
 	/*public void getDragonClawHits(Client c, int i) {
 		c.clawHit[0] = i+Misc.random(10)+1;
 		c.clawHit[1] = c.clawHit[0]/2;
@@ -2537,6 +2543,11 @@ if (c.freezeTimer > 0) //player can't move
 			return ClueLvl3[(int)(Math.random()*ClueLvl3.length)];
 		}
 		
+		public static int YanilleChest[] = {2577, 2581, 2571, 592, 592, 592, 592, 592, 592, 592, 592, 592, 592, 592, 592, 592, 592, 592, 592};
+				public int randomYanilleChest() {
+					return YanilleChest[(int)(Math.random()*YanilleChest.length)];
+				}
+		
 	public void fixAllBarrows() {
 		int totalCost = 0;
 		int cashAmount = c.getItems().getItemAmount(995);
@@ -2566,10 +2577,10 @@ if (c.freezeTimer > 0) //player can't move
 		// Ancient Spells
 				c.getPA().sendFrame126("Yanille", 13037);
 				c.getPA().sendFrame126("Canfis", 13047);
-				c.getPA().sendFrame126("Tzhaar", 13055);
-				c.getPA().sendFrame126("Onyx Caves Of Doom", 13056);
+				c.getPA().sendFrame126("Sophanem", 13055);
+				c.getPA().sendFrame126("Its really hot here!", 13056);
 				c.getPA().sendFrame126("Rellekka", 13063);
-				c.getPA().sendFrame126("Sophanem", 13071);
+				c.getPA().sendFrame126("Ardougne", 13071);
 				c.getPA().sendFrame126("Lletya", 13072); //dareeyak description
 				c.getPA().sendFrame126("Lletya.", 13081); //carrallanger
 				c.getPA().sendFrame126("Elfs,Faires live here.", 13082); //carralanger description
@@ -2578,16 +2589,16 @@ if (c.freezeTimer > 0) //player can't move
 				c.getPA().sendFrame126("????????", 13097); //ghorrock
 				c.getPA().sendFrame126("Suggest another area here.", 13098); //ghorrock description
 				// Modern Spells
-				//c.getPA().sendFrame126("Yanille", 1300);
-				//c.getPA().sendFrame126("Home of the mighty dad and miners.", 1301);
+				c.getPA().sendFrame126("Yanille", 1300);
+				c.getPA().sendFrame126("Home of the mighty dad and miners.", 1301);
 				c.getPA().sendFrame126("Canfis", 1325);
 				c.getPA().sendFrame126("Home of the swamp monsters.", 1326);
-				c.getPA().sendFrame126("Tzhaar", 1350);
-				c.getPA().sendFrame126("Onyx Caves Of Doom.", 1351);
+				c.getPA().sendFrame126("Sophanem", 1350);
+				c.getPA().sendFrame126("Its really hot here!", 1351);
 				c.getPA().sendFrame126("Rellekka", 1382);
 				c.getPA().sendFrame126("Rock creatures like to stroll here.", 1383);
-				c.getPA().sendFrame126("Sophanem", 1415);
-				c.getPA().sendFrame126("Its really hot here!", 1416);
+				c.getPA().sendFrame126("Ardougne", 1415);
+				c.getPA().sendFrame126("Thiever's Headquarters.", 1416);
 				c.getPA().sendFrame126("Lletya", 1454); //watchtower
 				c.getPA().sendFrame126("Elfs,Fairies live here.", 1455); //watchtower description
 				c.getPA().sendFrame126("Burthrope", 7457); //trollheim
@@ -2613,6 +2624,138 @@ if (c.freezeTimer > 0) //player can't move
 		
 	}
 
-	
+	public void loadQuests() {
+		c.getPA().sendFrame126("SSL Quests:", 663);
+		c.getPA().sendFrame126("", 13136);
+		c.getPA().sendFrame126("", 673);
+		if(c.getStart == 0) {
+			c.getPA().sendFrame126("@red@Getting Started", 7332);
+		} else if(c.getStart == 3) {
+			c.getPA().sendFrame126("@gre@Getting Started", 7332);
+		} else {
+			c.getPA().sendFrame126("@yel@Getting Started", 7332);
+		}
+		c.getPA().sendFrame126("", 7333);
+        c.getPA().sendFrame126("", 7334);
+        c.getPA().sendFrame126("", 7336);
+        c.getPA().sendFrame126("", 7383);
+        c.getPA().sendFrame126("", 7339);
+        c.getPA().sendFrame126("", 7338);
+        c.getPA().sendFrame126("", 7340);
+        c.getPA().sendFrame126("", 7346);
+        c.getPA().sendFrame126("", 7341);
+        c.getPA().sendFrame126("", 7342);
+        c.getPA().sendFrame126("", 7337);
+        c.getPA().sendFrame126("", 7343);
+        c.getPA().sendFrame126("", 7335);
+        c.getPA().sendFrame126("", 7344);
+        c.getPA().sendFrame126("", 7345);
+        c.getPA().sendFrame126("", 7347);
+        c.getPA().sendFrame126("", 7348);
+        c.getPA().sendFrame126("", 12772);
+        c.getPA().sendFrame126("", 7352);
+		c.getPA().sendFrame126("", 12129);
+		c.getPA().sendFrame126("", 8438);
+		c.getPA().sendFrame126("", 18517);
+		c.getPA().sendFrame126("", 15847);
+		c.getPA().sendFrame126("", 15487);
+		c.getPA().sendFrame126("", 12852);
+		c.getPA().sendFrame126("", 7354);
+		c.getPA().sendFrame126("", 7355);
+		c.getPA().sendFrame126("", 7356);
+		c.getPA().sendFrame126("", 8679);
+		c.getPA().sendFrame126("", 7459);
+		c.getPA().sendFrame126("", 7357);
+		c.getPA().sendFrame126("", 14912);
+		c.getPA().sendFrame126("", 249);
+		c.getPA().sendFrame126("", 6024);
+		c.getPA().sendFrame126("", 191);
+		c.getPA().sendFrame126("", 15235);
+		c.getPA().sendFrame126("", 15592);
+		c.getPA().sendFrame126("", 6987);
+		c.getPA().sendFrame126("", 15098);
+		c.getPA().sendFrame126("", 15352);
+		c.getPA().sendFrame126("", 18306);
+		c.getPA().sendFrame126("", 15499);
+		c.getPA().sendFrame126("", 668);
+		c.getPA().sendFrame126("", 18684);
+		c.getPA().sendFrame126("", 6027);
+		c.getPA().sendFrame126("", 18157);
+		c.getPA().sendFrame126("", 15847);
+		c.getPA().sendFrame126("", 16128);
+		c.getPA().sendFrame126("", 12836);
+		c.getPA().sendFrame126("", 16149);
+		c.getPA().sendFrame126("", 15841);
+		c.getPA().sendFrame126("", 7353);
+		c.getPA().sendFrame126("", 7358);
+		c.getPA().sendFrame126("", 17510);
+		c.getPA().sendFrame126("", 7359);
+		c.getPA().sendFrame126("", 14169);
+		c.getPA().sendFrame126("", 10115);
+		c.getPA().sendFrame126("", 14604);
+		c.getPA().sendFrame126("", 7360);
+		c.getPA().sendFrame126("", 12282);
+		c.getPA().sendFrame126("", 13577);
+		c.getPA().sendFrame126("", 12839);
+		c.getPA().sendFrame126("", 7361);
+		c.getPA().sendFrame126("", 11857);
+		c.getPA().sendFrame126("", 7362);
+		c.getPA().sendFrame126("", 7363);
+		c.getPA().sendFrame126("", 7364);
+		c.getPA().sendFrame126("", 10135);
+		c.getPA().sendFrame126("", 4508);
+		c.getPA().sendFrame126("", 11907);
+		c.getPA().sendFrame126("", 7365);
+		c.getPA().sendFrame126("", 7366);
+		c.getPA().sendFrame126("", 7367);
+		c.getPA().sendFrame126("", 13389);
+		c.getPA().sendFrame126("", 7368);
+		c.getPA().sendFrame126("", 11132);
+		c.getPA().sendFrame126("", 7369);
+		c.getPA().sendFrame126("", 12389);
+		c.getPA().sendFrame126("", 13974);
+		c.getPA().sendFrame126("", 7370);
+		c.getPA().sendFrame126("", 8137);
+		c.getPA().sendFrame126("", 7371);
+		c.getPA().sendFrame126("", 12345);
+		c.getPA().sendFrame126("", 7372);
+		c.getPA().sendFrame126("", 8115);
+		c.getPA().sendFrame126("", 8576);
+		c.getPA().sendFrame126("", 12139);
+		c.getPA().sendFrame126("", 7373);
+		c.getPA().sendFrame126("", 7374);
+		c.getPA().sendFrame126("", 8969);
+		c.getPA().sendFrame126("", 7375);
+		c.getPA().sendFrame126("", 7376);
+		c.getPA().sendFrame126("", 1740);
+		c.getPA().sendFrame126("", 3278);
+		c.getPA().sendFrame126("", 7378);
+		c.getPA().sendFrame126("", 6518);
+		c.getPA().sendFrame126("", 7379);
+		c.getPA().sendFrame126("", 7380);
+		c.getPA().sendFrame126("", 7381);
+		c.getPA().sendFrame126("", 11858);
+		c.getPA().sendFrame126("", 9927);
+		c.getPA().sendFrame126("", 7349);
+		c.getPA().sendFrame126("", 7350);
+		c.getPA().sendFrame126("", 7351);
+		c.getPA().sendFrame126("", 13356);
+	/*END OF ALL QUESTS*/
+}
 
+	public void GAFinish() {
+		c.getStart = 10;
+		c.getPA().addSkillXP(15000, 7);
+		c.getPA().showInterface(297);
+		c.getPA().showInterface(12140);
+		c.getPA().sendFrame126("You have completed: Cook's Assistant", 12144);
+		c.getPA().sendFrame126("15,000 Cooking Experience", 12150);
+		c.getPA().sendFrame126("", 12151);
+		c.getPA().sendFrame126("", 12152);
+		c.getPA().sendFrame126("", 12153);
+		c.getPA().sendFrame126("", 12154);
+		c.getPA().sendFrame126("", 12155);
+		c.getPA().sendFrame126("@gre@Cook's Assistant", 7332);
+	}
+	
 }

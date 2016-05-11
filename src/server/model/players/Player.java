@@ -74,7 +74,7 @@ public abstract class Player {
 			xInterfaceId = 0, xRemoveId = 0,	woodcuttingTree, xRemoveSlot = 0, tzhaarToKill = 0,
 			tzhaarKilled = 0, waveId, frozenBy = 0, poisonDamage = 0,
 			teleAction = 0, bonusAttack = 0, lastNpcAttacked = 0,
-			killCount = 0;
+			killCount = 0, getStart = 0;
 	public String clanName, properName;
 	 public int getLocalX() {
          return getX() - 8 * getMapRegionX();
@@ -576,6 +576,7 @@ public abstract class Player {
 	public boolean inMulti() {
 		if ((absX >= 3136 && absX <= 3327 && absY >= 3519 && absY <= 3607)
 				|| (absX >= 3190 && absX <= 3327 && absY >= 3648 && absY <= 3839)
+				|| (absX >= 2627 && absX <= 2664 && absY >= 3143 && absY <= 3169)
 				|| (absX >= 3200 && absX <= 3390 && absY >= 3840 && absY <= 3967)
 				|| (absX >= 2992 && absX <= 3007 && absY >= 3912 && absY <= 3967)
 				|| (absX >= 2946 && absX <= 2959 && absY >= 3816 && absY <= 3831)

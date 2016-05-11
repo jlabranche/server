@@ -1,6 +1,5 @@
 package server.model.players.skills;
 
-import server.Config;
 import server.model.players.Client;
 import server.util.Misc;
 
@@ -58,18 +57,6 @@ public class Thieving {
 
 		public int getDamage() {
 			return damage;
-		}
-	}
-	
-	public void SNPCsteal() {
-		if (System.currentTimeMillis() - c.lastThieve < 2000)
-			return;
-		if (c.playerThieving >= 50) {
-			c.startAnimation(881);
-			c.getItems().addItem(SEEDS[(int) (SEEDS.length * Math.random())], 1);
-			c.getPA().addSkillXP(10 * Config.THIEVING_EXPERIENCE, c.playerThieving);
-		} else {
-		c.sendMessage("You must be level 50 to pickpocket the farmer.");
 		}
 	}
 
@@ -132,10 +119,11 @@ public class Thieving {
 		return sd.getReward()[(int)(sd.getReward().length * Math.random())];
 	}
 	private enum StallData {
-		BAKER(2561, new int[]{1897}, 16, 5),
-		SILK(2560, new int[]{950}, 24, 20),
+		BAKER(2561, new int[]{1897}, 20, 20),
+		SILK(2560, new int[]{950}, 30, 35),
+		SILVER(2565, new int[]{2355}, 45, 45),
 		FUR(2563, new int[]{7680}, 36, 35),
-		SPICE(2564, new int[]{1613}, 81, 65),
+		SPICE(2564, new int[]{1613}, 50, 65),
 		GEM(2562, new int[]{1623, 1621, 1619, 1617, 1631}, 160, 75);
 
 		private int objId, xp, level;

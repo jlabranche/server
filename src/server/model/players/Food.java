@@ -15,7 +15,7 @@ public class Food {
 	}
 
 	public static enum FoodToEat {
-		MANTA(391, 22, "Manta Ray"), SHARK(385, 20, "Shark"), SHRIMP(315, 5, "Shrimp"), ANCHOVIES(319, 7, "Anchovies"), BASS(365, 10, "Bass"), LOBSTER(379, 12,
+		MANTA(391, 22, "Manta Ray"), SHARK(385, 20, "Shark"), LOBSTER(379, 12,
 				"Lobster"), TROUT(333, 7, "Trout"), SALMON(329, 9, "Salmon"), SWORDFISH(
 				373, 14, "Swordfish"), TUNA(361, 10, "Tuna"), MONKFISH(7946,
 				16, "Monkfish"), SEA_TURTLE(397, 22, "Sea Turtle"), TUNA_POTATO(
@@ -60,7 +60,7 @@ public class Food {
 			c.sendMessage("You may not eat in this duel.");
 			return;
 		}
-		if (System.currentTimeMillis() - c.foodDelay >= 1500
+		if (System.currentTimeMillis() - c.foodDelay <= 1800
 				&& c.playerLevel[3] > 0) {
 			c.getCombat().resetPlayerAttack();
 			c.attackTimer += 2;
@@ -75,6 +75,8 @@ public class Food {
 			c.foodDelay = System.currentTimeMillis();
 			c.getPA().refreshSkill(3);
 			c.sendMessage("You eat the " + f.getName() + ".");
+		} else {
+			c.sendMessage("WTF");
 		}
 	}
 

@@ -71,7 +71,7 @@ public class Firemaking extends SkillHandler {
 					public void execute(CycleEventContainer container) {
 						if (isSkilling[11] == true) {
 							Server.itemHandler.removeGroundItem(c, logId, x, c.absY, false);
-							new Object(2732, x, y, 0, 0, 10, -1, 60 + Misc.random(30));
+							new Object(5249, x, y, 0, 0, 10, -1, 60 + Misc.random(30));
 							c.sendMessage("The fire catches and the log beings to burn.");
 							CycleEventHandler.getSingleton().addEvent(c, new CycleEvent() {
 								@Override

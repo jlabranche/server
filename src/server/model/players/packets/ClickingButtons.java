@@ -102,16 +102,6 @@ public class ClickingButtons implements PacketType {
 			if (c.dialogueAction == 10) {
 				c.getPA().spellTeleport(2796, 4818, 0);
 				c.dialogueAction = -1;
-			} else if (c.dialogueAction == 5) {
-				if (c.playerSlayer >= 0) {
-					if (c.slayerTask <= 0) {
-						c.getSlayer().easyTask();	
-					} else {
-						c.getDH().sendDialogues(13, 1599);
-					}
-				} else {
-					c.getPA().sendStatement("Your slayer level isn't high enough.");
-			}
 			} else if (c.dialogueAction == 11) {
 				c.getPA().spellTeleport(2527, 4833, 0);
 				c.dialogueAction = -1;
@@ -257,6 +247,12 @@ public class ClickingButtons implements PacketType {
 		case 53151: Cooking.getAmount(c, 5); break;
 		case 53150: Cooking.getAmount(c, 10); break;
 		case 53149: Cooking.getAmount(c, 28); break;
+		
+		/** Quests **/
+	
+		case 28164:
+			c.getGSQ().showInformation();
+			break;
 		
 						// Skill Guides! \\
 		case 33208://Mining
@@ -918,6 +914,16 @@ public class ClickingButtons implements PacketType {
 				c.getPA().openUpBank();
 			} else if (c.dialogueAction == 53) {
 				c.getDH().sendDialogues(38,	551);
+			} else if (c.dialogueAction == 5) {
+				if (c.playerSlayer >= 0 || c.playerSlayer < 15) {
+					if (c.slayerTask <= 0 ) {
+						c.getSlayer().Lvl1Task();	
+					} else {
+						c.getDH().sendDialogues(13, 1599);
+					}
+				} else {
+					c.getPA().sendStatement("Your slayer level isn't high enough.");
+			}
 			} else if (c.dialogueAction == 29) {
 				c.isMaxed();
 				if(c.maxed) {
@@ -1225,9 +1231,6 @@ public class ClickingButtons implements PacketType {
 			c.usingMagic = false;
 			break;
 
-		case 28164: // item kept on death
-			break;
-
 		case 152:
 			c.isRunning2 = !c.isRunning2;
 			int frame = c.isRunning2 == true ? 1 : 0;
@@ -1295,7 +1298,7 @@ public class ClickingButtons implements PacketType {
 			case 117131:
 			case 50253:
 			case 4146:
-			c.getPA().startTeleport(2480, 5173, 0, "modern");
+			c.getPA().startTeleport(3305, 2790, 0, "modern");
 			break;
 			
 			case 117154:
@@ -1307,7 +1310,7 @@ public class ClickingButtons implements PacketType {
 			case 117162:
 			case 51013:
 			case 6004:
-			c.getPA().startTeleport(3305, 2790, 0, "modern");
+			c.getPA().startTeleport(2616, 3337, 0, "modern");
 			break; 
 			
 			case 51023: //Elf City

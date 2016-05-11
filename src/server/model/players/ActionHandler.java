@@ -36,14 +36,11 @@ public class ActionHandler {
 		switch (objectType) {
 		//Cave Agility Area
 		case 5847:
-			if (c.objectX == 2760 && c.objectY == 3658) {
-				c.startAnimation(839);
+			if (c.objectX == 2760 && c.objectY == 3685) {
+				c.startAnimation(844);
 				c.getPA().movePlayer(2762, 3660, 0);
 			}
 			break;
-		case 10076:
-				c.sendMessage("You Do Some Push-Ups and Gain Some Strenght Exp");
-				break;
 		case 5857:
 				c.getPA().movePlayer(3577, 9927, 0);
 				c.sendMessage("You enter the cave.");
@@ -53,6 +50,18 @@ public class ActionHandler {
 				c.getPA().movePlayer(3511, 9967, 0);
 			}
 			break;*/
+		case 5581: // Free WC AXE TUT
+			if (c.objectX == 3186 && c.objectY == 3277) {
+				if (!c.getItems().playerHasItem(1351, 1)) {
+				if(c.getStart == 3) {
+					c.getItems().addItem(1351, 1);
+				}
+			} else {
+				c.sendMessage("You only need one don't be greedy!");
+			}
+		}
+			break;
+			
 		case 2492:
 			if (c.killCount >= 20) {
 				c.getDH().sendOption4("Armadyl", "Bandos", "Saradomin",
@@ -103,16 +112,25 @@ public class ActionHandler {
 			break;
 			
 	//New Sky Scape Stuff
-		/*case 1733: //Yanille Dung in
-			if (c.objectX == 2603 && c.objectY == 3078) {
+		case 2408: //Entrana Ice Dung in
+			if (c.objectX == 2820 && c.objectY == 3374) {
+				if (c.playerLevel[18] >= 15) {
+				c.startAnimation(828);
 				c.getPA().movePlayer(3007, 9550, 0);
+				} else {
+					c.sendMessage("You need a slayer lever of 15 to enter this dungeon.");
+				}
 			}
 			break;
-		case 1734: //Yanille Dung out
-			if (c.objectX == 3008 && c.objectY == 9550) {
-				c.getPA().movePlayer(2606, 3079, 0);
+		case 1755:
+			if (c.objectX == 3008 && c.objectY == 9550) { //Yanille Dung out
+				c.startAnimation(828);
+				c.getPA().movePlayer(2821, 3374, 0);
 			}
-			break;*/
+			if (c.objectX == 2884 && c.objectY == 9797) { //notsure
+				c.getPA().movePlayer(c.absX, c.absY - 6400, 0);
+			}
+			break;
 	//Dodian Tribute Red Key
 		case 1733: //Yanille Dung in
 			if (c.objectX == 2603 && c.objectY == 3078) {
@@ -126,9 +144,6 @@ public class ActionHandler {
 		case 1734: //Yanille Dung out
 			if (c.objectX == 2603 && c.objectY == 9478) {
 				c.getPA().movePlayer(2606, 3079, 0);
-			}
-			if (c.objectX == 2724 && c.objectY == 9774) {
-				c.getPA().movePlayer(2647, 3658, 0);
 			}
 			break;
 			//Dodian Tribute Red Key Boss
@@ -147,8 +162,9 @@ public class ActionHandler {
 					}
 					break;
 		case 1746:
-			if (c.objectX == 2715 && c.objectY == 3470) {
+			if (c.objectX == 2715 && c.objectY == 3470 || c.objectX == 2597 && c.objectY == 3107) {
 				c.getPA().movePlayer(c.absX, c.absY, 0);
+				} else {
 				c.sendMessage("Ladder not coded in");
 			}
 			break;
@@ -174,6 +190,31 @@ public class ActionHandler {
 			}, 1);
 			} else {
 				c.getPA().sendStatement("You are to far away.");
+			}
+			break;
+			
+			//Thieving
+			
+		case 2560:
+		c.getThieving().stealFromStall(2560);
+		break;
+		
+		case 2561:
+		c.getThieving().stealFromStall(2561);
+		break;
+		
+		case 375:
+			if (System.currentTimeMillis() - c.lastThieve < 2000)
+			return;
+			if (c.playerLevel[c.playerThieving] >= 70) {
+			double roll = Math.random() * 100;
+			c.sendMessage("You pick from the chest.");
+			if (roll < 0.3) {
+			c.sendMessage("You catch a "+ c.getItems().getItemName(c.getPA().randomYanilleChest()));
+			c.getItems().addItem(c.getPA().randomYanilleChest(), 1);
+			} else
+			c.sendMessage("You find some coins.");
+			c.getItems().addItem(995, 200 + Misc.random(7800));
 			}
 			break;
 			
@@ -408,15 +449,12 @@ public class ActionHandler {
 		case 4911:
 		case 4912:
 		case 1747:
-			if (c.objectX == 2715 && c.objectY == 3470) {
+			if (c.objectX == 2715 && c.objectY == 3470 || c.objectX == 2597 && c.objectY == 3107) {
 				c.getPA().movePlayer(c.absX, c.absY, +1);
 			} else {
 				c.sendMessage("Ladder not coded in");
 			}
 		case 1757:
-			if (c.objectX == 2892 && c.objectY == 9907) {
-				c.getPA().movePlayer(2649, 3661, 0);
-			}
 			// Server.castleWars.handleObjects(c, objectType, obX, obY);
 			break;
 
@@ -740,6 +778,26 @@ public class ActionHandler {
 				break;
 			}
 		case 1530:
+		if (obX == 2594 && obY == 3102) {
+			if (c.playerThieving <= 60) {
+				if (c.getItems().playerHasItem(1523, 1)) {
+				if (System.currentTimeMillis() - c.lastThieve < 2000)
+				return;
+				c.sendMessage("You successfully pick the lock.");
+				c.startAnimation(2246);
+				c.getPA().movePlayer(2594, 3103, 0);
+				c.getPA().addSkillXP(37 * Config.THIEVING_EXPERIENCE, c.playerThieving);
+			} else {
+			c.sendMessage("Door is locked. Needs a lockpick to open.");
+			}
+			} else {
+			c.sendMessage("You need a Thieving Level of 60 to use this door.");
+			}
+			} else {
+			Server.objectHandler.doorHandling(objectType, c.objectX, c.objectY,
+					0);
+					}
+			break;
 		case 1531:
 		case 1533:
 		case 1600:
@@ -755,7 +813,8 @@ public class ActionHandler {
 		case 3198:
 		case 3197:
 		case 2559:
-		case 4247:
+		case 12986:
+		case 12987:
 			Server.objectHandler.doorHandling(objectType, c.objectX, c.objectY,
 					0);
 			break;
@@ -802,11 +861,6 @@ public class ActionHandler {
 				c.getPA().walkTo(0, 1);
 			else
 				c.getPA().walkTo(0, -1);
-			break;
-
-		case 1755:
-			if (c.objectX == 2884 && c.objectY == 9797)
-				c.getPA().movePlayer(c.absX, c.absY - 6400, 0);
 			break;
 		case 1759:
 			if (c.objectX == 2884 && c.objectY == 3397)
@@ -952,19 +1006,11 @@ public class ActionHandler {
 				}
 				break;
 				
-			case 100://Rellekka Dung Trapdoors
-				if (c.objectX == 2647 && c.objectY == 3657) { //legends
-					c.getPA().movePlayer(2728, 9774, 0);
-				}
-				if (c.objectX == 2650 && c.objectY == 3661) { //heros
-					c.getPA().movePlayer(2893, 9907, 0);
-				}
-				break;
 			case 5947://hole to brimhaven dung
 				if (c.objectX == 3310&& c.objectY == 2775) {
 						c.getPA().movePlayer(2741, 9502, 0);
 				}
-				break;
+				break;	
 			case 5946://rope to sophanem
 				if (c.objectX == 2741 && c.objectY == 9503){
 					c.getPA().movePlayer(3310, 2774, 0);
@@ -1095,6 +1141,53 @@ public class ActionHandler {
 		c.clickNpcType = 0;
 		c.npcClickIndex = 0;
 		switch (i) {
+		case 2913: // master fisher
+			if(c.getStart == 0) {
+				c.getDH().sendDialogues(130, 2913);
+			} else if(c.getStart == 1) {
+				c.getDH().sendDialogues(133, 2913);
+			}
+			if (c.getItems().playerHasItem(317, 1) && c.getStart == 1) {
+				c.getDH().sendDialogues(135, 2913);
+			}
+			break;
+		case 635: // master fisher spot
+			if(c.getStart == 1) {
+			c.getFishing().attemptdata(c, 1);
+			} else {
+			c.getDH().sendDialogues(134, 2913);
+			}
+			break;
+		case 3226: // woodsman tutor
+			if(c.getStart == 2) {
+				c.getDH().sendDialogues(136, 3226);
+			} else if (c.getStart == 3 && c.getItems().playerHasItem(1511, 1)) {
+				c.getDH().sendDialogues(137, 3226);
+			} else if (c.getStart == 4 && c.playerLevel[11] >= 2) {
+				c.getDH().sendDialogues(138, 3226);
+			}
+			break;
+		case 3216: //melee tutor
+			if(c.getStart == 5) {
+				c.getDH().sendDialogues(140, 3216);
+			} else {
+				c.sendMessage("He doesn't seem interested in talking.");
+			}
+			break;
+		case 3217: //Ranged tutor
+			if(c.getStart == 5) {
+				c.getDH().sendDialogues(142, 3217);
+			} else {
+				c.sendMessage("He doesn't seem interested in talking.");
+			}
+			break;
+		case 3218: //Magic tutor
+			if(c.getStart == 5) {
+				c.getDH().sendDialogues(144, 3218);
+			} else {
+				c.sendMessage("He doesn't seem interested in talking.");
+			}
+			break;
 		case 706:
 			c.getDH().sendDialogues(9, i);
 			break;
@@ -1126,10 +1219,10 @@ public class ActionHandler {
 			break;
 //* Servers Entire New Stuff, Old Stuff Pending Deletion to save space *//
 		//Fishing//
-		/*case 324: //lobs
+		case 324: //lobs
 			c.getFishing().attemptdata(c, 3);
 			break;
-		case 1496: //shrimp
+		case 316: //shrimp
 			c.getFishing().attemptdata(c, 1);
 			break;
 		case 334: //mantas
@@ -1144,42 +1237,42 @@ public class ActionHandler {
 		case 318: //sharks
 			c.getFishing().attemptdata(c, 7);
 			break;
-		case 1506: //tuna
+		case 317: //tuna
 			c.getFishing().attemptdata(c, 6);
 			break;
-		case 1497: //Anchovies
+		case 319: //Anchovies
 			c.getFishing().attemptdata(c, 8);
+			break;
+		case 320: //Bass
+			c.getFishing().attemptdata(c, 9);
 			break;
 		case 321: //Swordfish
 			c.getFishing().attemptdata(c, 10);
 			break;
 		case 322: //Sea Turtle
 			c.getFishing().attemptdata(c, 11);
-			break;*/
+			break;
 		//End Fishing//
 		//Player DH Shop
-		case 4929:
+		case 200:
 			c.getDH().sendDialogues(106, i);
 		break;
-		case 537:
+		case 551:
 			c.getDH().sendDialogues(36, i);
 		break;
-		case 455://Herblore
-			c.getShops().openShop(5);
-		break;
-		case 535:
+		case 549:
 			c.getShops().openShop(2);
 		break;
-		case 4065:
+		case 219:
 			c.getShops().openShop(9);
 		break;
 		case 1210:
 			c.getDH().sendDialogues(30, i);
 		break;
-		case 5444:
+		case 2539:
 			c.getDH().sendDialogues(27, i);
 		break;
-		case 3393:
+		case 3449:
 			c.getDH().sendDialogues(34, i);
 			break;
 		case 1599:
@@ -1190,13 +1283,13 @@ public class ActionHandler {
 			//}
 			break;
 			
-		case 3257: //Hand Coded Master Farmer
+		case 2234: //Hand Coded Master Farmer
 			if (System.currentTimeMillis() - c.lastThieve < 2000)
 				return;
 			if (c.playerThieving >= 50) {
 				c.startAnimation(881);
 				c.getItems().addItem(Thieving.SEEDS[(int) (Thieving.SEEDS.length * Math.random())], 1);
-				c.getPA().addSkillXP(10 * Config.THIEVING_EXPERIENCE, c.playerThieving);
+				c.getPA().addSkillXP(43 * Config.THIEVING_EXPERIENCE, c.playerThieving);
 			} else {
 			c.sendMessage("You must be level 50 to pickpocket the farmer.");
 			}
@@ -1264,20 +1357,26 @@ public class ActionHandler {
 		c.npcClickIndex = 0;
 		switch (i) {
 		//New Stuff
-		case 4929:
+		case 200:
 			c.getPA().showInterface(3559);
 			c.canChangeAppearance = true;
 		break;
+		case 1:
+			c.getThieving().stealFromNPC(1);
+			break;
+		case 32:
+			c.getThieving().stealFromNPC(1);
+			break;
 		case 804:
 			c.getShops().openShop(4);
 		break;
-		case 537:
+		case 551:
 			c.getShops().openShop(1);
 		break;
 		case 1599:
 			c.getShops().openShop(3);
 		break;
-		case 3257: //Hand Coded Master Farmer
+		case 2234: //Hand Coded Master Farmer
 			if (System.currentTimeMillis() - c.lastThieve < 2000)
 				return;
 			if (c.playerLevel[c.playerThieving] >= 50) {
@@ -1357,7 +1456,7 @@ public class ActionHandler {
 			c.getShops().openShop(3);
 			break;
 
-		case 535:
+		case 549:
 			c.getShops().openShop(4);
 			break;
 

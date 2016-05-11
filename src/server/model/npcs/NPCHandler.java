@@ -34,8 +34,8 @@ public class NPCHandler {
                         NPCDefinitions.getDefinitions()[i] = null;
 		}
 		
-		loadNPCList("./Data/cfg/npc.cfg");
-		loadAutoSpawn("./Data/cfg/spawn-config.cfg");
+		loadNPCList("./Data/CFG/npc.cfg");
+		loadAutoSpawn("./Data/CFG/spawn-config.cfg");
 		// System.out.println("NPC Spawns Loaded");
 	}
 	
@@ -188,6 +188,7 @@ public class NPCHandler {
 			case 2882:
 			case 2883:
 			case 2035:
+			case 158:
 			return true;		
 		}
 		if (npcs[i].inWild() && npcs[i].MaxHP > 0)
@@ -1697,6 +1698,8 @@ public void handleClipping(int i) {
 				c.sendMessage("You now have " +c.repPoints+ " reputation points.");
 			}
 			
+			
+			
 			if (npcs[i].npcType == 6107 && c.rankLevel < 25000) {
 				c.repPoints += 3;
 				c.rankLevel += 3;
@@ -1750,6 +1753,12 @@ public void handleClipping(int i) {
 				c.repPoints += 30;
 				c.sendMessage("You've gained 30 reputation points.");
 				c.sendMessage("You now have " +c.repPoints+ " reputation points.");
+			}
+			
+			if (npcs[i].npcType == 101) {
+				if (c.slayerTask == 101 ) {
+					c.getPA().addSkillXP(10, c.playerSlayer);
+				}
 			}
 			
 			if(npcs[i].npcType == 4291 && c.inCyclops) {
@@ -2153,6 +2162,11 @@ public void handleClipping(int i) {
 			npcs[i].projectileId = 100;
 			npcs[i].attackType = 2;
 			npcs[i].endGfx = 101;
+			break;
+			case 13:
+			npcs[i].projectileId = 90;
+			npcs[i].attackType = 2;
+			npcs[i].endGfx = 91;
 			break;
 			case 66:
 				npcs[i].projectileId = 19;

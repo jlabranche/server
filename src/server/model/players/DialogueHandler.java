@@ -2,6 +2,7 @@ package server.model.players;
 
 import server.Server;
 //import server.model.players.skills.Slayer;
+import server.model.players.skills.Thieving;
 
 public class DialogueHandler {
 
@@ -74,7 +75,7 @@ public class DialogueHandler {
 			c.nextChat = 12;
 			break;
 		case 12:
-			sendOption5("I would like some information on how to train slayer.", "I would like an Simple Task.", "I would like a Difficult Task", "I would like an Challanging task.", "Nothing at the moment");
+			sendOption2("I would like some information on how to train slayer.", "I would like an Slayer Task Please.");
 			c.dialogueAction = 5;
 		break;
 		case 13:
@@ -209,7 +210,7 @@ public class DialogueHandler {
 			c.dialogueAction = 20;
 		break;
 		case 106:
-			sendNpcChat3("@blu@Welcome to Skyscapelive!@bla@", "I'm the Champion of Skyscape.", "How may I help you?", 4929, "Champion of Skyscape");
+			sendNpcChat3("@blu@Welcome to Skyscapelive!@bla@", "I'm the Champion of Skyscape.", "How may I help you?", 200, "Champion of Skyscape");
 			c.nextChat = 107;
 		break;
 		case 107:
@@ -256,7 +257,107 @@ public class DialogueHandler {
 			sendNpcChat1("Hello "+c.repPoints+ " reputation points to spend.", c.talkingNpc, "Martin Thwait");
 			c.nextChat = 121;
 		break;*/
+		//SkyScapeLive Quests
+		/** Getting Started Quests DH **/
+		case 130:
+			sendNpcChat1("Hello adventurer welcome to skyscapelive.", c.talkingNpc, "Master Fisher");
+			c.nextChat = 131;
+			break;
 		
+		case 131:
+			sendNpcChat2("I am the master fisherman of these parts", "and I'm here to show you how to fish.", c.talkingNpc, "Master Fisher");
+			c.nextChat = 132;
+			break;
+			
+		case 132:
+			sendNpcChat2("Take this here small fishing net.", "and go use it on the pond over there.", c.talkingNpc, "Master Fisher");
+			c.getItems().addItem(303, 1);
+			c.nextChat = 0;
+			c.getStart = 1;
+			break;
+			
+		case 133:
+			sendNpcChat1("Stop lolligagging and get down there and fish!", c.talkingNpc, "Master Fisher");
+			c.nextChat = 0;
+			break;
+			
+		case 134:
+			sendNpcChat1("Hey you don't need to fish from my pond anymore!", c.talkingNpc, "Master Fisher");
+			c.nextChat = 0;
+			break;
+			
+		case 135:
+			sendNpcChat3("Congratulations you fished an shrimp!.", "I've taught you enough for now.", "Head east and speak with the woodsman tutor!", c.talkingNpc, "Master Fisher");
+			c.nextChat = 0;
+			c.getStart = 2;
+			break;
+			
+		case 136:
+			sendNpcChat3("Hello I assume you want to learn woodcutting eh....", "pick an axe from the chicken coop.", "then use it to chop this tree over here.", c.talkingNpc, "Woodsman Tutor");
+			c.nextChat = 0;
+			c.getStart = 3;
+			break;
+			
+		case 137:
+			sendNpcChat3("You did it! You cut the tree down.", "Take this tinderbox and use it with the logs.", "Doing so will create an fire!.", c.talkingNpc, "Woodsman Tutor");
+			c.getItems().addItem(590, 1);
+			c.nextChat = 0;
+			c.getStart = 4;
+			break;
+			
+		case 138:
+			 sendPlayerChat1("I did it I created fire!.");
+			 c.nextChat = 139;
+			 break;
+			
+		case 139:
+			sendNpcChat2("Good job. I've taught you all i can teach you for now.", "Please head east and speak with the combat tutor's.", c.talkingNpc, "Woodsman Tutor");
+			c.nextChat = 0;
+			c.getStart = 5;
+			break;
+			
+		case 140:
+			if (!c.getItems().playerHasItem(9703, 1)) {
+			sendNpcChat2("Hello adventurer you can train melee by,", "equiping any weapon and attacking npcs!", c.talkingNpc, "Melee Combat Tutor");
+			c.nextChat = 141;
+			}
+			break;
+			
+		case 141:
+			sendNpcChat1("Take this Sword and Shield to help you get started, good luck!", c.talkingNpc, "Melee Combat Tutor");
+			c.getItems().addItem(9703, 1);
+			c.getItems().addItem(9704, 1);
+			c.nextChat = 0;
+			break;
+		
+		case 142:
+			if (!c.getItems().playerHasItem(9705, 1)) {
+			sendNpcChat3("Hi there you can train ranged by equiping any", "bow, c'bow, or thorwing equipment.", " You attack npc's to train!", c.talkingNpc, "Ranged Combat Tutor");
+			c.nextChat = 143;
+			}
+			break;
+			
+		case 143:
+			sendNpcChat1("Take this Bow & arrows to help you get started", c.talkingNpc, "Ranged Combat Tutor");
+			c.getItems().addItem(9705, 1);
+			c.getItems().addItem(9706, 50);
+			c.nextChat = 0;
+			break;
+			
+		case 144:
+			if (!c.getItems().playerHasItem(1379, 1)) {
+			sendNpcChat3("Hello ssl player you can train magic by,", "equiping staff's, or just using any runes.", " You attack npc's to train!", c.talkingNpc, "Magic Combat Tutor");
+			c.nextChat = 145;
+			}
+			break;
+			
+		case 145:
+			sendNpcChat1("Take this Staff & Runes to help you get started.", c.talkingNpc, "Ranged Combat Tutor");
+			c.getItems().addItem(1379, 1);
+			c.getItems().addItem(556, 50);
+			c.getItems().addItem(558, 50);
+			c.nextChat = 0;
+			break;
 		}
 	}
 
